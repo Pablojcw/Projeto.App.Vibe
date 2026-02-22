@@ -22,7 +22,7 @@ if (mensagemBtn) {
 const viagem = document.getElementById("navegar_page_home");
 if (viagem) {
     viagem.addEventListener("click", () => {
-        window.location.href = "untitled-1.html";
+        window.location.href = "../pages/info.html";
     });
 } else {
     console.warn("Elemento #navegar_page_home não encontrado no DOM");

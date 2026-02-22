@@ -101,7 +101,6 @@ h3 {
 }
 
 button {
-  /* botões também seguem a cor de texto do tema */
   color: var(--cor-texto);
   padding: 10px 20px;
   background: transparent;

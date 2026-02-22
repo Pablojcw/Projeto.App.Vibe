@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog and Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <header class="bg-orange-100 py-6 text-gray-900 shadow">
+        <h1 class="text-center text-3xl font-bold uppercase">
+            My Blog and Website
+        </h1>
+
+        <hr class="my-6 border-gray-300">
+
+        <!-- botão para voltar ao home -->
+        <div class="flex justify-center mb-4">
+            <button id="navegar_home" class="bg-gray-500 hover:bg-gray-600 transition text-white px-6 py-3 rounded-lg">
+                Voltar para a página inicial
+            </button>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+            <button class="bg-blue-500 hover:bg-blue-600 transition text-white px-6 py-3 rounded-lg" id="mensagem">
+                Clique aqui para uma mensagem para o seu dia
+            </button>
+
+            <p id="resultado" class="text-lg font-medium"></p>
+        </div>
+    </header>
+
+
+    <main class="max-w-4xl mx-auto p-6 space-y-10">
+
+
+        <article class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-center text-2xl font-semibold mb-4">
+                Bem-vindo ao Site Teste Program
+            </h2>
+
+            <p class="text-center mb-2">
+                Este é um lugar para compartilhar ideias, reflexões e descobertas sobre o que mais me inspira no dia a
+                dia.
+                Seja sobre experiências pessoais, cultura, curiosidades ou dicas práticas.
+            </p>
+
+            <p class="text-center">
+                Espero que cada texto aqui faça você pensar, sorrir ou até se inspirar a criar algo novo.
+            </p>
+        </article>
+
+
+        <article class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-center text-2xl font-semibold mb-4">Sobre Mim</h2>
+
+            <p class="text-center mb-2">
+                Meu nome é Pablo, tenho 18 anos e sou estudante de programação.
+                Gosto de tecnologia, games e desenvolvimento de software.
+
+            <p class="text-center mb-2">
+                Atualmente estou procurando aportunidades para crescer como programado e contuinuar aprendendo cada vez
+                mais.
+                Atuva na area de desenvolvimento back-end com o Java. porem agora estou me aventurando no
+                desenvolvimento front-end com HTML, CSS e JavaScript.
+            </p>
+            </p>
+
+            <p class="text-center mb-4">
+                Estou me sentindo um pouco solitario no momento. lidando com algumas coisas que não são muito
+                divertidas.
+                venho tentando cada vez mais me distrair e me divertir, mas as vezes é dificil. e esse site tem como
+                objetivo me ajudar a
+                me distrair e me livrar da solidão.
+            </p>
+
+            <p class="text-center mb-4">
+                Este site foi criado para compartilhar o que me inspira no dia a dia
+                e mostrar minha evolução na programação.
+            </p>
+        </article>
+
+
+        <article class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-center text-2xl font-semibold mb-4">
+                Coisas para fazer dentro do site
+            </h2>
+
+            <div class="space-y-4">
+                <label class="flex items-start gap-2">
+                    <input type="checkbox" class="mt-1">
+                    <span>Pode desenhar, escrever, criar e compartilhar suas ideias.</span>
+                </label>
+
+                <label class="flex items-start gap-2">
+                    <input type="checkbox" class="mt-1">
+                    <span>Você pode comentar, compartilhar e interagir com as postagens.</span>
+                </label>
+
+                <label class="flex items-start gap-2">
+                    <input type="checkbox" class="mt-1">
+                    <span>teremos uma área de jogos para se divertir e relaxar.</span>
+                </label>
+
+                <label class="flex items-start gap-2">
+                    <input type="checkbox" class="mt-1">
+                    <span>teremos uma área de pintura para você criar e compartilhar suas obras.</span>
+                </label>
+
+
+                <label class="flex items-start gap-2">
+                    <input type="checkbox" class="mt-1">
+                    <span>teremos uma área de poemas e pensamentos para você compartilhar suas reflexões.</span>
+                </label>
+            </div>
+        </article>
+
+    </main>
+
+</body>
+
+</html>
