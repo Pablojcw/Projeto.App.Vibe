@@ -6,6 +6,9 @@ const frases = [
     "Nunca pare de praticar!"
 ];
 
+/*feito para organizar o salvamento do poema*/
+
+let poemaEdicao = null;
 
 const mensagemBtn = document.getElementById("mensagem");
 if (mensagemBtn) {
@@ -56,22 +59,38 @@ function salvarPoema() {
         return;
     }
 
-    const poema = {
-        id: Date.now(),
-        titulo: titulo,
-        conteudo: conteudo,
-        data: new Date().toLocaleDateString("pt-BR")
-    };
+    let poemas = JSON.parse(localStorage.getItem("meus_poemas")) || [];
 
-    const poemas = JSON.parse(localStorage.getItem("meus_poemas")) || [];
-    poemas.push(poema);
+    if (poemaEdicao){
+        poemas = poemas.map(p => {
+            if(p.id === poemaEdicao){
+                return{
+                    ...p,
+                    titulo,
+                    conteudo,
+                };
+            }
+            return p;
+        });
+
+        poemaEdicao = null;
+    } else {
+        const novoPoema = {
+            id: Date.now(),
+            titulo,
+            conteudo,
+            data: new Date().toLocaleDateString("pt-BR")
+        };
+        poemas.push(novoPoema);
+
+    }
+
     localStorage.setItem("meus_poemas", JSON.stringify(poemas));
 
     // AQUI E AONDE VAMOS LIMPAR O FORMULARIO VULGOO POEMA
 
     document.getElementById("poema_titulo").value = "";
     document.getElementById("poema_conteudo").value = "";
-    alert("Poema salvo com sucesso");
     listarPoemas();
 }
 
@@ -114,9 +133,12 @@ function listarPoemas() {
 function carregarPoema(id) {
     let poemas = JSON.parse(localStorage.getItem("meus_poemas")) || [];
     const poema = poemas.find(p => p.id === id);
+
     if (poema) {
         document.getElementById("poema_titulo").value = poema.titulo;
         document.getElementById("poema_conteudo").value = poema.conteudo;
+
+        poemaEdicao = id;
         document.getElementById("poema_titulo").focus();
     }
 }
@@ -129,16 +151,12 @@ function deletarPoema(id) {
     let poemas = JSON.parse(localStorage.getItem("meus_poemas")) || [];
     poemas = poemas.filter(p => p.id !== id);
     localStorage.setItem("meus_poemas", JSON.stringify(poemas));
-
-    alert(" Poema deletado!");
     listarPoemas();
 }
 
-// Inicializar lista ao carregar página de poemas
 const btnSalvar = document.getElementById("btn_salvar_poema");
 if (btnSalvar) {
     btnSalvar.addEventListener("click", salvarPoema);
-    // Listar poemas ao carregar
     listarPoemas();
 }
 
