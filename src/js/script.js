@@ -1,27 +1,4 @@
-
-const frases = [
-    "Aprender é a melhor aventura!",
-    "Hoje é um ótimo dia para criar algo novo!",
-    "Código limpo = mente limpa 😎",
-    "Nunca pare de praticar!"
-];
-
-/*feito para organizar o salvamento do poema*/
-
-let poemaEdicao = null;
-
-const mensagemBtn = document.getElementById("mensagem");
-if (mensagemBtn) {
-    mensagemBtn.addEventListener("click", () => {
-        const index = Math.floor(Math.random() * frases.length);
-        const resultado = document.getElementById("resultado");
-        if (resultado) resultado.textContent = frases[index];
-    });
-} else {
-    // não está na página atual, tudo bem
-}
-
-// botão de navegação para outra página (home.html)
+let poemaEdicao = null
 const viagem = document.getElementById("navegar_page_home");
 if (viagem) {
     viagem.addEventListener("click", () => {
@@ -30,14 +7,14 @@ if (viagem) {
 } else {
     console.warn("Elemento #navegar_page_home não encontrado no DOM");
 }
-// botão de retorno de Untitled-1 para home
+
 const voltar = document.getElementById("navegar_home");
 if (voltar) {
     voltar.addEventListener("click", () => {
         window.location.href = "home.html";
     });
 } else {
-    // não está na página atual
+
 }
 
 const navegador_poema = document.getElementById("navegador_page_poema");
@@ -46,7 +23,7 @@ if (navegador_poema) {
         window.location.href = "poemas.html";
     });
 } else {
-    console.warn("Elemento #navegador_page_poema não encontrado no DOM");
+    console.warn("Elemento #navegador_page_poema não encontrado no DOM");   
 }
 
 
