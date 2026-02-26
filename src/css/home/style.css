@@ -1,0 +1,66 @@
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* camada escura para dar contraste */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 10, 25, 0.6);
+    z-index: -1;
+}
+
+.header {
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    Z-index: 2;
+    animation: h11s linear 2s forwards;
+}
+
+.header {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1.2s ease-out forwards;
+}
+
+.header>* {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* delays diferentes para efeito em cascata */
+.header small {
+    animation-delay: 0.5s;
+}
+
+.header h1 {
+    animation-delay: 0.8s;
+}
+
+.header button {
+    animation-delay: 1.1s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    color: aliceblue;
+
+    top: 50%;
+}
