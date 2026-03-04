@@ -23,7 +23,25 @@ if (navegador_poema) {
         window.location.href = "poemas.html";
     });
 } else {
-    console.warn("Elemento #navegador_page_poema não encontrado no DOM");   
+    console.warn("Elemento #navegador_page_poema não encontrado no DOM");
+}
+
+const navegador_game = document.getElementById("navegar_jogo");
+if (navegador_game) {
+    navegador_game.addEventListener("click", () => {
+        window.location.href = "../pages/pages_game/game.html"
+    });
+} else {
+    console.warn("Elemento #navegador_game não encontrado no DOM");
+}
+
+const navegar_jogo = document.getElementById("navegar_page_jogo");
+if (navegar_jogo) {
+    navegar_jogo.addEventListener("click", () => {
+        window.location.href = "../pages/jogo.html"
+    });
+} else {
+    console.warn("Elemento #navegador_page_jogos não encontrado no DOM");
 }
 
 
@@ -38,10 +56,10 @@ function salvarPoema() {
 
     let poemas = JSON.parse(localStorage.getItem("meus_poemas")) || [];
 
-    if (poemaEdicao){
+    if (poemaEdicao) {
         poemas = poemas.map(p => {
-            if(p.id === poemaEdicao){
-                return{
+            if (p.id === poemaEdicao) {
+                return {
                     ...p,
                     titulo,
                     conteudo,
